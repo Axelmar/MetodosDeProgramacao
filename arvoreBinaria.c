@@ -114,6 +114,25 @@ void remover(No **pRaiz, int numero){
           }
 }
 
+void destruir(No **pRaiz) {
+  if(*pRaiz == NULL){                       // esta verificacao serve para caso o numero nao exista na arvore.
+       printf("Ja era");
+       getchar();
+       return;
+  }
+  if ((*pRaiz)->esquerda != NULL)
+    destruir(&(*pRaiz)->esquerda);
+  if((*pRaiz)->direita != NULL)
+    destruir(&(*pRaiz)->direita);
+
+  No *pAux = *pRaiz;
+  if (((*pRaiz)->esquerda == NULL) && ((*pRaiz)->direita == NULL)){         // se nao houver filhos...
+                free(pAux);
+                (*pRaiz) = NULL; 
+               }
+
+}
+
 // Função recursiva que mostra os nós em ordem crescente de tamanho,
 // vasculhando primeiro as folhas da esquerda e em seguite as da direita.
 void exibirEmOrdem(No *pRaiz){

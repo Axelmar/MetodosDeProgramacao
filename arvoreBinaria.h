@@ -15,6 +15,8 @@ No *MenorEsquerda(No **no);
 
 void remover(No **pRaiz, int numero);
 
+void destruir(No **pRaiz);
+
 void exibirEmOrdem(No *pRaiz);
 
 void exibirPreOrdem(No *pRaiz);
