@@ -1,3 +1,10 @@
+/** Primeiro trabalho da disciplina Metodos de Programacao
+*   Aluno: Marcelo Axel Chiapinotto de Nazare
+*   @brief Implementação da biblioteca utilizada para a implementação da arvore binaria implementada em C
+*   @file arvoreBinaria.h
+*/
+
+
 typedef struct No{
   int numero;
   struct No *esquerda;

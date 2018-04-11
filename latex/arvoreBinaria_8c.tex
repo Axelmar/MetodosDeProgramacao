@@ -1,0 +1,166 @@
+\hypertarget{arvoreBinaria_8c}{}\section{arvore\+Binaria.\+c File Reference}
+\label{arvoreBinaria_8c}\index{arvore\+Binaria.\+c@{arvore\+Binaria.\+c}}
+
+
+Arquivo com as funções da arvore binaria implementada em C.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+Include dependency graph for arvore\+Binaria.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{arvoreBinaria_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structNo}{No}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structNo}{No} {\bfseries No}\hypertarget{arvoreBinaria_8c_a4b43d871b3b95d055eb797c21c0f1a86}{}\label{arvoreBinaria_8c_a4b43d871b3b95d055eb797c21c0f1a86}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{arvoreBinaria_8c_ad7af62588f3c7bf62a3b1b9131bdecf2}{criar\+Arvore} (\hyperlink{structNo}{No} $\ast$$\ast$p\+Raiz)
+\item 
+void \hyperlink{arvoreBinaria_8c_ab9a8170700e4959cbb0d759afd9ed36f}{inserir} (\hyperlink{structNo}{No} $\ast$$\ast$Raiz, int numero)
+\item 
+\hyperlink{structNo}{No} $\ast$ \hyperlink{arvoreBinaria_8c_a620885ca081cbff300e390c0159f4eec}{Maior\+Direita} (\hyperlink{structNo}{No} $\ast$$\ast$no)
+\item 
+\hyperlink{structNo}{No} $\ast$ {\bfseries Menor\+Esquerda} (\hyperlink{structNo}{No} $\ast$$\ast$no)\hypertarget{arvoreBinaria_8c_a947f333156cc6140d17b8279cacd3d92}{}\label{arvoreBinaria_8c_a947f333156cc6140d17b8279cacd3d92}
+
+\item 
+void \hyperlink{arvoreBinaria_8c_a3722f1f28e1d1c1eec5e4a80aff3ed28}{remover} (\hyperlink{structNo}{No} $\ast$$\ast$p\+Raiz, int numero)
+\item 
+void {\bfseries destruir} (\hyperlink{structNo}{No} $\ast$$\ast$p\+Raiz)\hypertarget{arvoreBinaria_8c_a863c3a2f8caf654398a2c958f1b44173}{}\label{arvoreBinaria_8c_a863c3a2f8caf654398a2c958f1b44173}
+
+\item 
+void \hyperlink{arvoreBinaria_8c_a863b516794a66dd6127d9c3eb1cda053}{exibir\+Em\+Ordem} (\hyperlink{structNo}{No} $\ast$p\+Raiz)
+\item 
+void \hyperlink{arvoreBinaria_8c_af733fb80f9df6a044ad95e3acceb17d8}{exibir\+Pre\+Ordem} (\hyperlink{structNo}{No} $\ast$p\+Raiz)
+\item 
+void \hyperlink{arvoreBinaria_8c_a6ccbdad1d9a8e9b1cead620e753c391b}{exibir\+Pos\+Ordem} (\hyperlink{structNo}{No} $\ast$p\+Raiz)
+\item 
+int \hyperlink{arvoreBinaria_8c_a12f3dacf0abff877202a7dbbc9e154af}{contar\+Nos} (\hyperlink{structNo}{No} $\ast$p\+Raiz)
+\item 
+int \hyperlink{arvoreBinaria_8c_a1a7bff780c0761e35d793eb63ade82a8}{contar\+Folhas} (\hyperlink{structNo}{No} $\ast$p\+Raiz)
+\item 
+int \hyperlink{arvoreBinaria_8c_a65fac635e32482de5aea1c52982617af}{maior} (int a, int b)
+\item 
+int \hyperlink{arvoreBinaria_8c_a9277c622160c65267f1c800cb26fce0b}{altura} (\hyperlink{structNo}{No} $\ast$p\+Raiz)
+\item 
+\hyperlink{structNo}{No} $\ast$ \hyperlink{arvoreBinaria_8c_a979389a445a8a7715a4ebb3f6d1dfb0b}{busca\+\_\+no} (\hyperlink{structNo}{No} $\ast$raiz, int chave)
+\item 
+void \hyperlink{arvoreBinaria_8c_adb3229175de5ff92dd312aab74c62cd5}{busca} (\hyperlink{structNo}{No} $\ast$raiz)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Arquivo com as funções da arvore binaria implementada em C. 
+
+Primeiro trabalho da disciplina Metodos de Programacao Aluno\+: Marcelo Axel Chiapinotto de Nazare 
+
+\subsection{Function Documentation}
+\index{arvore\+Binaria.\+c@{arvore\+Binaria.\+c}!altura@{altura}}
+\index{altura@{altura}!arvore\+Binaria.\+c@{arvore\+Binaria.\+c}}
+\subsubsection[{\texorpdfstring{altura(\+No $\ast$p\+Raiz)}{altura(No *pRaiz)}}]{\setlength{\rightskip}{0pt plus 5cm}altura (
+\begin{DoxyParamCaption}
+\item[{{\bf No} $\ast$}]{p\+Raiz}
+\end{DoxyParamCaption}
+)}\hypertarget{arvoreBinaria_8c_a9277c622160c65267f1c800cb26fce0b}{}\label{arvoreBinaria_8c_a9277c622160c65267f1c800cb26fce0b}
+Percorre a arvore até o final e no caminho conta para retornar a altura da arvore. \index{arvore\+Binaria.\+c@{arvore\+Binaria.\+c}!busca@{busca}}
+\index{busca@{busca}!arvore\+Binaria.\+c@{arvore\+Binaria.\+c}}
+\subsubsection[{\texorpdfstring{busca(\+No $\ast$raiz)}{busca(No *raiz)}}]{\setlength{\rightskip}{0pt plus 5cm}busca (
+\begin{DoxyParamCaption}
+\item[{{\bf No} $\ast$}]{raiz}
+\end{DoxyParamCaption}
+)}\hypertarget{arvoreBinaria_8c_adb3229175de5ff92dd312aab74c62cd5}{}\label{arvoreBinaria_8c_adb3229175de5ff92dd312aab74c62cd5}
+Busca atravez da arvore um no com o valor especificado pelo usuário. \index{arvore\+Binaria.\+c@{arvore\+Binaria.\+c}!busca\+\_\+no@{busca\+\_\+no}}
+\index{busca\+\_\+no@{busca\+\_\+no}!arvore\+Binaria.\+c@{arvore\+Binaria.\+c}}
+\subsubsection[{\texorpdfstring{busca\+\_\+no(\+No $\ast$raiz, int chave)}{busca_no(No *raiz, int chave)}}]{\setlength{\rightskip}{0pt plus 5cm}busca\+\_\+no (
+\begin{DoxyParamCaption}
+\item[{{\bf No} $\ast$}]{raiz, }
+\item[{int}]{chave}
+\end{DoxyParamCaption}
+)}\hypertarget{arvoreBinaria_8c_a979389a445a8a7715a4ebb3f6d1dfb0b}{}\label{arvoreBinaria_8c_a979389a445a8a7715a4ebb3f6d1dfb0b}
+Função auxiliar que retorna o endereço de um nó na arvore. \index{arvore\+Binaria.\+c@{arvore\+Binaria.\+c}!contar\+Folhas@{contar\+Folhas}}
+\index{contar\+Folhas@{contar\+Folhas}!arvore\+Binaria.\+c@{arvore\+Binaria.\+c}}
+\subsubsection[{\texorpdfstring{contar\+Folhas(\+No $\ast$p\+Raiz)}{contarFolhas(No *pRaiz)}}]{\setlength{\rightskip}{0pt plus 5cm}contar\+Folhas (
+\begin{DoxyParamCaption}
+\item[{{\bf No} $\ast$}]{p\+Raiz}
+\end{DoxyParamCaption}
+)}\hypertarget{arvoreBinaria_8c_a1a7bff780c0761e35d793eb63ade82a8}{}\label{arvoreBinaria_8c_a1a7bff780c0761e35d793eb63ade82a8}
+Conta o numero de folhas total existente na arvore. \index{arvore\+Binaria.\+c@{arvore\+Binaria.\+c}!contar\+Nos@{contar\+Nos}}
+\index{contar\+Nos@{contar\+Nos}!arvore\+Binaria.\+c@{arvore\+Binaria.\+c}}
+\subsubsection[{\texorpdfstring{contar\+Nos(\+No $\ast$p\+Raiz)}{contarNos(No *pRaiz)}}]{\setlength{\rightskip}{0pt plus 5cm}contar\+Nos (
+\begin{DoxyParamCaption}
+\item[{{\bf No} $\ast$}]{p\+Raiz}
+\end{DoxyParamCaption}
+)}\hypertarget{arvoreBinaria_8c_a12f3dacf0abff877202a7dbbc9e154af}{}\label{arvoreBinaria_8c_a12f3dacf0abff877202a7dbbc9e154af}
+Conta o numero de nós total existente na arvore. \index{arvore\+Binaria.\+c@{arvore\+Binaria.\+c}!criar\+Arvore@{criar\+Arvore}}
+\index{criar\+Arvore@{criar\+Arvore}!arvore\+Binaria.\+c@{arvore\+Binaria.\+c}}
+\subsubsection[{\texorpdfstring{criar\+Arvore(\+No $\ast$$\ast$p\+Raiz)}{criarArvore(No **pRaiz)}}]{\setlength{\rightskip}{0pt plus 5cm}criar\+Arvore (
+\begin{DoxyParamCaption}
+\item[{{\bf No} $\ast$$\ast$}]{p\+Raiz}
+\end{DoxyParamCaption}
+)}\hypertarget{arvoreBinaria_8c_ad7af62588f3c7bf62a3b1b9131bdecf2}{}\label{arvoreBinaria_8c_ad7af62588f3c7bf62a3b1b9131bdecf2}
+Para criar a arvore criamos um novo ponteiro o qual ainda nao aponta para lugar nenhum. \index{arvore\+Binaria.\+c@{arvore\+Binaria.\+c}!exibir\+Em\+Ordem@{exibir\+Em\+Ordem}}
+\index{exibir\+Em\+Ordem@{exibir\+Em\+Ordem}!arvore\+Binaria.\+c@{arvore\+Binaria.\+c}}
+\subsubsection[{\texorpdfstring{exibir\+Em\+Ordem(\+No $\ast$p\+Raiz)}{exibirEmOrdem(No *pRaiz)}}]{\setlength{\rightskip}{0pt plus 5cm}exibir\+Em\+Ordem (
+\begin{DoxyParamCaption}
+\item[{{\bf No} $\ast$}]{p\+Raiz}
+\end{DoxyParamCaption}
+)}\hypertarget{arvoreBinaria_8c_a863b516794a66dd6127d9c3eb1cda053}{}\label{arvoreBinaria_8c_a863b516794a66dd6127d9c3eb1cda053}
+Função recursiva que mostra os nós em ordem crescente de tamanho, vasculhando primeiro as folhas da esquerda e em seguite as da direita. \index{arvore\+Binaria.\+c@{arvore\+Binaria.\+c}!exibir\+Pos\+Ordem@{exibir\+Pos\+Ordem}}
+\index{exibir\+Pos\+Ordem@{exibir\+Pos\+Ordem}!arvore\+Binaria.\+c@{arvore\+Binaria.\+c}}
+\subsubsection[{\texorpdfstring{exibir\+Pos\+Ordem(\+No $\ast$p\+Raiz)}{exibirPosOrdem(No *pRaiz)}}]{\setlength{\rightskip}{0pt plus 5cm}exibir\+Pos\+Ordem (
+\begin{DoxyParamCaption}
+\item[{{\bf No} $\ast$}]{p\+Raiz}
+\end{DoxyParamCaption}
+)}\hypertarget{arvoreBinaria_8c_a6ccbdad1d9a8e9b1cead620e753c391b}{}\label{arvoreBinaria_8c_a6ccbdad1d9a8e9b1cead620e753c391b}
+Assim como as outras busca na ordem crescente da arvore, porem apresenta as folhas na ordem inversa que foram inseridas. \index{arvore\+Binaria.\+c@{arvore\+Binaria.\+c}!exibir\+Pre\+Ordem@{exibir\+Pre\+Ordem}}
+\index{exibir\+Pre\+Ordem@{exibir\+Pre\+Ordem}!arvore\+Binaria.\+c@{arvore\+Binaria.\+c}}
+\subsubsection[{\texorpdfstring{exibir\+Pre\+Ordem(\+No $\ast$p\+Raiz)}{exibirPreOrdem(No *pRaiz)}}]{\setlength{\rightskip}{0pt plus 5cm}exibir\+Pre\+Ordem (
+\begin{DoxyParamCaption}
+\item[{{\bf No} $\ast$}]{p\+Raiz}
+\end{DoxyParamCaption}
+)}\hypertarget{arvoreBinaria_8c_af733fb80f9df6a044ad95e3acceb17d8}{}\label{arvoreBinaria_8c_af733fb80f9df6a044ad95e3acceb17d8}
+Função recursiva que mostra os nós na ordem em que foram adicionados a arvore mantendo a caracteristica de vasculhar primeiro as folhas da esquerda e em seguida as da direita. \index{arvore\+Binaria.\+c@{arvore\+Binaria.\+c}!inserir@{inserir}}
+\index{inserir@{inserir}!arvore\+Binaria.\+c@{arvore\+Binaria.\+c}}
+\subsubsection[{\texorpdfstring{inserir(\+No $\ast$$\ast$\+Raiz, int numero)}{inserir(No **Raiz, int numero)}}]{\setlength{\rightskip}{0pt plus 5cm}inserir (
+\begin{DoxyParamCaption}
+\item[{{\bf No} $\ast$$\ast$}]{Raiz, }
+\item[{int}]{numero}
+\end{DoxyParamCaption}
+)}\hypertarget{arvoreBinaria_8c_ab9a8170700e4959cbb0d759afd9ed36f}{}\label{arvoreBinaria_8c_ab9a8170700e4959cbb0d759afd9ed36f}
+Para inserir um novo elemento na arvore biaria temos que alocar o espaço ncesssário para esse novo no e criar dois novos ponteiros que apontam para a folha da esquerda e da direita e um ponteiro para o conteudo desse novo no. Teremos dois comportamentos para colocar a arvore em ordem. Se a raiz existir mas estiver vazia apenas vamos inserir, caso contrario iremos verificar recursivamente o local para que os nos fiquem em ordem crescente. \index{arvore\+Binaria.\+c@{arvore\+Binaria.\+c}!maior@{maior}}
+\index{maior@{maior}!arvore\+Binaria.\+c@{arvore\+Binaria.\+c}}
+\subsubsection[{\texorpdfstring{maior(int a, int b)}{maior(int a, int b)}}]{\setlength{\rightskip}{0pt plus 5cm}maior (
+\begin{DoxyParamCaption}
+\item[{int}]{a, }
+\item[{int}]{b}
+\end{DoxyParamCaption}
+)}\hypertarget{arvoreBinaria_8c_a65fac635e32482de5aea1c52982617af}{}\label{arvoreBinaria_8c_a65fac635e32482de5aea1c52982617af}
+Função auxiliar, compara dois numeros e retorna o maior \index{arvore\+Binaria.\+c@{arvore\+Binaria.\+c}!Maior\+Direita@{Maior\+Direita}}
+\index{Maior\+Direita@{Maior\+Direita}!arvore\+Binaria.\+c@{arvore\+Binaria.\+c}}
+\subsubsection[{\texorpdfstring{Maior\+Direita(\+No $\ast$$\ast$no)}{MaiorDireita(No **no)}}]{\setlength{\rightskip}{0pt plus 5cm}$\ast$ Maior\+Direita (
+\begin{DoxyParamCaption}
+\item[{{\bf No} $\ast$$\ast$}]{no}
+\end{DoxyParamCaption}
+)}\hypertarget{arvoreBinaria_8c_a620885ca081cbff300e390c0159f4eec}{}\label{arvoreBinaria_8c_a620885ca081cbff300e390c0159f4eec}
+Como a arvore binaria se organiza com os menres nos a esquerda e os maiores nos a direita as duas funções seguintes servem para buscar os endereços dos maior no a direita e do menor no a esquerda ou seja, as folhas mais distantes da raiz. \index{arvore\+Binaria.\+c@{arvore\+Binaria.\+c}!remover@{remover}}
+\index{remover@{remover}!arvore\+Binaria.\+c@{arvore\+Binaria.\+c}}
+\subsubsection[{\texorpdfstring{remover(\+No $\ast$$\ast$p\+Raiz, int numero)}{remover(No **pRaiz, int numero)}}]{\setlength{\rightskip}{0pt plus 5cm}remover (
+\begin{DoxyParamCaption}
+\item[{{\bf No} $\ast$$\ast$}]{p\+Raiz, }
+\item[{int}]{numero}
+\end{DoxyParamCaption}
+)}\hypertarget{arvoreBinaria_8c_a3722f1f28e1d1c1eec5e4a80aff3ed28}{}\label{arvoreBinaria_8c_a3722f1f28e1d1c1eec5e4a80aff3ed28}
+Para removermos um no da arvore temos que verirficar se a arvore existe a seguir iremos procurar pelas folhas da arvore de forma recursiva e comparando o que queremos remover com o conteudo de cada folha. Uma vez que achamos o no iremos guardar sua posição e remove-\/lopara em seguida rearranjar a arvore de forma a manter suas propriedades. 

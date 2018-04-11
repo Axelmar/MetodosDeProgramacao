@@ -1,16 +1,22 @@
+/** Primeiro trabalho da disciplina Metodos de Programacao
+*   Aluno: Marcelo Axel Chiapinotto de Nazare
+*   @brief Arquivo de teste da arvore binaria implementada em C
+*   @file testa_arvore.c
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "arvoreBinaria.h"
-#include "catch.hpp"
+//#include "catch.hpp"
 
-#define CATCH_CONFIG_MAIN //This tells Catch to provide a main() - only do this in one cpp file
-
-
+//#define CATCH_CONFIG_MAIN //This tells Catch to provide a main() - only do this in one cpp file
 
 
-TEST_CASE( "Inclusao bem sucedida", "[inserir]") {
+
+
+/*TEST_CASE( "Inclusao bem sucedida", "[inserir]") {
   REQUIRE( inserir(&primeiroNo, 123) == 123);
-}
+}*/
 
 int main(){
 

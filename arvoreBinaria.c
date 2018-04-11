@@ -1,3 +1,10 @@
+/** Primeiro trabalho da disciplina Metodos de Programacao
+*   Aluno: Marcelo Axel Chiapinotto de Nazare
+*   @brief Arquivo com as funções da arvore binaria implementada em C
+*   @file arvoreBinaria.c
+*/
+
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -9,20 +16,23 @@ typedef struct No{
   struct No *direita;
 }No;
 
-// Para criar a arvore criamos um novo ponteiro
-// o qual ainda nao aponta para lugar nenhum.
+
+/** @fn criarArvore(No **pRaiz)
+* Para criar a arvore criamos um novo ponteiro
+* o qual ainda nao aponta para lugar nenhum. */
 void criarArvore(No **pRaiz){
     *pRaiz = NULL;
 }
 
 
-// Para inserir um novo elemento na arvore biaria
-// temos que alocar o espaço ncesssário para esse novo
-// no e criar dois novos ponteiros que apontam para a folha
-// da esquerda e da direita e um ponteiro para o conteudo desse novo no.
-// Teremos dois comportamentos para colocar a arvore em ordem. Se a raiz
-// existir mas estiver vazia apenas vamos inserir, caso contrario iremos
-// verificar recursivamente o local para que os nos fiquem em ordem crescente.
+/** @fn inserir(No **Raiz, int numero)
+ Para inserir um novo elemento na arvore biaria
+* temos que alocar o espaço ncesssário para esse novo
+* no e criar dois novos ponteiros que apontam para a folha
+* da esquerda e da direita e um ponteiro para o conteudo desse novo no.
+* Teremos dois comportamentos para colocar a arvore em ordem. Se a raiz
+* existir mas estiver vazia apenas vamos inserir, caso contrario iremos
+* verificar recursivamente o local para que os nos fiquem em ordem crescente. */
 void inserir(No **Raiz, int numero){
   if (*Raiz==NULL){
     *Raiz=(No *)malloc(sizeof (No));
@@ -38,9 +48,10 @@ void inserir(No **Raiz, int numero){
   }
 }
 
-// Como a arvore binaria se organiza com os menres nos a esquerda e os maiores
-// nos a direita as duas funções seguintes servem para buscar os endereços dos 
-// maior no a direita e do menor no a esquerda ou seja, as folhas mais distantes da raiz.
+/** @fn *MaiorDireita(No **no)
+* Como a arvore binaria se organiza com os menres nos a esquerda e os maiores
+* nos a direita as duas funções seguintes servem para buscar os endereços dos 
+* maior no a direita e do menor no a esquerda ou seja, as folhas mais distantes da raiz. */
 No *MaiorDireita(No **no){
     if((*no)->direita != NULL) 
        return MaiorDireita(&(*no)->direita);
@@ -53,6 +64,8 @@ No *MaiorDireita(No **no){
        return aux;
        }
 }
+
+/** @fn *MenorEsquerda(No **no) */
 
 No *MenorEsquerda(No **no){
     if((*no)->esquerda != NULL) 
@@ -67,11 +80,13 @@ No *MenorEsquerda(No **no){
        }
 }
 
-// Para removermos um no da arvore temos que verirficar se a arvore existe
-// a seguir iremos procurar pelas folhas da arvore de forma recursiva e comparando
-// o que queremos remover com o conteudo de cada folha. Uma vez que achamos o no
-// iremos guardar sua posição e remove-lopara em seguida rearranjar a arvore de
-// forma a manter suas propriedades.
+
+/** @fn remover(No **pRaiz, int numero)
+* Para removermos um no da arvore temos que verirficar se a arvore existe
+* a seguir iremos procurar pelas folhas da arvore de forma recursiva e comparando
+* o que queremos remover com o conteudo de cada folha. Uma vez que achamos o no
+* iremos guardar sua posição e remove-lopara em seguida rearranjar a arvore de
+* forma a manter suas propriedades. */
 void remover(No **pRaiz, int numero){
     if(*pRaiz == NULL){                       // esta verificacao serve para caso o numero nao exista na arvore.
        printf("Numero nao existe na arvore!");
@@ -113,6 +128,8 @@ void remover(No **pRaiz, int numero){
           }
 }
 
+
+/** @fn destruir(No **pRaiz) */
 void destruir(No **pRaiz) {
   if(*pRaiz == NULL) {                       // Condicional para parar a destruição
     printf("Não Existe arvore!");
@@ -131,8 +148,10 @@ void destruir(No **pRaiz) {
   }
 }
 
-// Função recursiva que mostra os nós em ordem crescente de tamanho,
-// vasculhando primeiro as folhas da esquerda e em seguite as da direita.
+
+/** @fn exibirEmOrdem(No *pRaiz)
+* Função recursiva que mostra os nós em ordem crescente de tamanho,
+* vasculhando primeiro as folhas da esquerda e em seguite as da direita. */
 void exibirEmOrdem(No *pRaiz){
     if(pRaiz != NULL){
         exibirEmOrdem(pRaiz->esquerda);
@@ -141,8 +160,10 @@ void exibirEmOrdem(No *pRaiz){
     }
 }
 
-// Função recursiva que mostra os nós na ordem em que foram adicionados a arvore
-// mantendo a caracteristica de vasculhar primeiro as folhas da esquerda e em seguida as da direita.
+
+/** @fn exibirPreOrdem(No *pRaiz)
+* Função recursiva que mostra os nós na ordem em que foram adicionados a arvore
+* mantendo a caracteristica de vasculhar primeiro as folhas da esquerda e em seguida as da direita. */
 void exibirPreOrdem(No *pRaiz){
     if(pRaiz != NULL){
         printf("%i \n", pRaiz->numero);
@@ -152,8 +173,10 @@ void exibirPreOrdem(No *pRaiz){
 
 }
 
-// Assim como as outras busca na ordem crescente da arvore, porem apresenta as folhas na 
-// ordem inversa que foram inseridas.
+
+/** @fn exibirPosOrdem(No *pRaiz)
+* Assim como as outras busca na ordem crescente da arvore, porem apresenta as folhas na 
+* ordem inversa que foram inseridas. */
 void exibirPosOrdem(No *pRaiz){
     if(pRaiz != NULL){
         exibirPosOrdem(pRaiz->esquerda);
@@ -163,7 +186,9 @@ void exibirPosOrdem(No *pRaiz){
 
 }
 
-// Conta o numero de nós total existente na arvore.
+
+/** @fn contarNos(No *pRaiz)
+* Conta o numero de nós total existente na arvore. */
 int contarNos(No *pRaiz){
    if(pRaiz == NULL)
         return 0;
@@ -171,7 +196,9 @@ int contarNos(No *pRaiz){
         return 1 + contarNos(pRaiz->esquerda) + contarNos(pRaiz->direita);
 }
 
-//  Conta o numero de folhas total existente na arvore.
+
+/** @fn contarFolhas(No *pRaiz)
+*  Conta o numero de folhas total existente na arvore. */
 int contarFolhas(No *pRaiz){
    if(pRaiz == NULL)
         return 0;
@@ -180,7 +207,9 @@ int contarFolhas(No *pRaiz){
    return contarFolhas(pRaiz->esquerda) + contarFolhas(pRaiz->direita);
 }
 
-// Função auxiliar, compara dois numeros e retorna o maior
+
+/** @fn maior(int a, int b)
+* Função auxiliar, compara dois numeros e retorna o maior */
 int maior(int a, int b){
     if(a > b)
         return a;
@@ -188,7 +217,9 @@ int maior(int a, int b){
         return b;
 }
 
-// Percorre a arvore até o final e no caminho conta para retornar a altura da arvore.
+
+/** @fn altura(No *pRaiz)
+* Percorre a arvore até o final e no caminho conta para retornar a altura da arvore. */
 int altura(No *pRaiz){
    if((pRaiz == NULL) || (pRaiz->esquerda == NULL && pRaiz->direita == NULL))
        return 0;
@@ -196,7 +227,9 @@ int altura(No *pRaiz){
        return 1 + maior(altura(pRaiz->esquerda), altura(pRaiz->direita));
 }
 
-// Função auxiliar que retorna o endereço de um nó na arvore.
+
+/** @fn busca_no(No *raiz, int chave)
+* Função auxiliar que retorna o endereço de um nó na arvore. */
 No* busca_no(No *raiz, int chave) {
   if (raiz == NULL || raiz->numero == chave) {
     return raiz;
@@ -207,7 +240,9 @@ No* busca_no(No *raiz, int chave) {
   }
 }
 
-// Busca atravez da arvore um no com o valor especificado pelo usuário.
+
+/** @fn busca(No *raiz)
+* Busca atravez da arvore um no com o valor especificado pelo usuário. */
 void busca(No *raiz)  {
   int num = 0;
   
