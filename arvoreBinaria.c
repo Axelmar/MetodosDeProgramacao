@@ -1,15 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <arvoreBinaria.h>
 
 // Instanciando os elementos da arvore.
 
-struct No{
+typedef struct No{
   int numero;
   struct No *esquerda;
   struct No *direita;
-};
-typedef struct No No;
+}No;
 
 // Para criar a arvore criamos um novo ponteiro
 // o qual ainda nao aponta para lugar nenhum.

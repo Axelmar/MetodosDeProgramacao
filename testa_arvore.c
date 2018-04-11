@@ -1,6 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <arvoreBinaria.h>
+#include "arvoreBinaria.h"
+#include "catch.hpp"
+
+#define CATCH_CONFIG_MAIN //This tells Catch to provide a main() - only do this in one cpp file
+
+
+
+
+TEST_CASE( "Inclusao bem sucedida", "[inserir]") {
+  REQUIRE( inserir(&primeiroNo, 123) == 123);
+}
 
 int main(){
 
@@ -34,6 +44,11 @@ int main(){
   busca(primeiroNo);
   destruir(&primeiroNo);
   destruir(&primeiroNo);
+
+
+
+
+
 
 
   return 0;

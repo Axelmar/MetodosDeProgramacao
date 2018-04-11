@@ -1,5 +1,5 @@
 IDIR =include
-CC=gcc
+CC=g++
 CFLAGS=-I$(IDIR)
 
 ODIR=obj
@@ -14,16 +14,16 @@ _OBJ = testa_arvore.o arvoreBinaria.o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 
-$(OBJ): $(ODIR)/%.o: src/%.c $(DEPS)
+$(ODIR)/%.o: %.c $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 arvoreBinaria: $(OBJ)
-	gcc -o $@ $^ $(CFLAGS) $(LIBS) -ftest-coverage -fprofile-arcs
+	g++ -o $@ $^ $(CFLAGS) $(LIBS) -ftest-coverage -fprofile-arcs
 
 .PHONY: clean
 
 clean:
-	rm -f $(ODIR)/*.o *~ core $(INCDIR)/*~ 
+	rm -f $(ODIR)/*.o ~ core $(INCDIR)/~
 
 
 # CC=gcc
